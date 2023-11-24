@@ -1,13 +1,13 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <TargetFramework>net7.0</TargetFramework>
-        <Nullable>enable</Nullable>
         <ImplicitUsings>disable</ImplicitUsings>
+        <Nullable>enable</Nullable>
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\AnimeAPI.Infra.Ioc\AnimeAPI.Infra.Ioc.csproj" />
+      <ProjectReference Include="..\AnimeAPI.Domain\AnimeAPI.Domain.csproj" />
     </ItemGroup>
     
 </Project>

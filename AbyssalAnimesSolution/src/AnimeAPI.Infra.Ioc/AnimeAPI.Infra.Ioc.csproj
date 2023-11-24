@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>disable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\AnimeAPI.Application\AnimeAPI.Application.csproj" />
+      <ProjectReference Include="..\AnimeAPI.Domain\AnimeAPI.Domain.csproj" />
+      <ProjectReference Include="..\AnimeAPI.Infra.Data\AnimeAPI.Infra.Data.csproj" />
+    </ItemGroup>
+    
+</Project>
