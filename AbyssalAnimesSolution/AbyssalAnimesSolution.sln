@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimeAPI.Infra.Data", "src\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimeAPI.Infra.Ioc", "src\AnimeAPI.Infra.Ioc\AnimeAPI.Infra.Ioc.csproj", "{34650D1C-3F8A-4EBD-815B-735E7780F9CC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimeAPI.Application.Tests", "test\AnimeAPI.Application.Tests\AnimeAPI.Application.Tests.csproj", "{29E45179-06D1-4B9C-8CA9-8DC192B9527B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,5 +50,9 @@ Global
 		{34650D1C-3F8A-4EBD-815B-735E7780F9CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34650D1C-3F8A-4EBD-815B-735E7780F9CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34650D1C-3F8A-4EBD-815B-735E7780F9CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29E45179-06D1-4B9C-8CA9-8DC192B9527B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29E45179-06D1-4B9C-8CA9-8DC192B9527B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29E45179-06D1-4B9C-8CA9-8DC192B9527B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29E45179-06D1-4B9C-8CA9-8DC192B9527B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
