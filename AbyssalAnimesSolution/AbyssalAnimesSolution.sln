@@ -4,8 +4,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimeAPI", "src\AnimeAPI\An
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimeAPI.Tests", "test\AnimeAPI.Tests\AnimeAPI.Tests.csproj", "{72A1741F-D481-4B15-875C-AB911C6A5F32}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimeAPI.Domain", "src\AnimeAPI.Domain\AnimeAPI.Domain\AnimeAPI.Domain.csproj", "{566C0897-C44A-44EE-A62C-D5EC37816826}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimeAPI.Domain", "src\AnimeAPI.Domain\AnimeAPI.Domain.csproj", "{392D2608-28CF-40F2-A13C-A1C65AE758EB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimeAPI.Application", "src\AnimeAPI.Application\AnimeAPI.Application.csproj", "{DE359FFD-338C-46E1-97A7-D92B3E4613C7}"
