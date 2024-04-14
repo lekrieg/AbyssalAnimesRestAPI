@@ -7,105 +7,104 @@
 // 12, 01, 2023
 // ////////////////////////
 
+using AnimeAPI.Infra.Data.Context;
 using System;
 using System.Threading.Tasks;
-using AnimeAPI.Domain.Entities;
-using AnimeAPI.Infra.Data.Context;
 
 namespace AnimeAPI.Infra.Data.Repositories;
 
 public class UnitOfWork : IDisposable
 {
-	private readonly ApplicationDbContext _applicationDbContext;
-	private AnimeRepository _animeRepository;
-	private EpisodeRepository _episodeRepository;
-	private GenreRepository _genreRepository;
-	private StatusRepository _statusRepository;
+    private readonly ApplicationDbContext _applicationDbContext;
+    private AnimeRepository _animeRepository;
+    private EpisodeRepository _episodeRepository;
+    private GenreRepository _genreRepository;
+    private StatusRepository _statusRepository;
 
-	public AnimeRepository AnimeRepository
-	{
-		get
-		{
-			if (_animeRepository == null)
-			{
-				_animeRepository = new AnimeRepository(_applicationDbContext);
-			}
+    public AnimeRepository AnimeRepository
+    {
+        get
+        {
+            if (_animeRepository == null)
+            {
+                _animeRepository = new AnimeRepository(_applicationDbContext);
+            }
 
-			return _animeRepository;
-		}
-	}
-	
-	public EpisodeRepository EpisodeRepository
-	{
-		get
-		{
-			if (_episodeRepository == null)
-			{
-				_episodeRepository = new EpisodeRepository(_applicationDbContext);
-			}
+            return _animeRepository;
+        }
+    }
 
-			return _episodeRepository;
-		}
-	}
-	
-	public GenreRepository GenreRepository
-	{
-		get
-		{
-			if (_genreRepository == null)
-			{
-				_genreRepository = new GenreRepository(_applicationDbContext);
-			}
+    public EpisodeRepository EpisodeRepository
+    {
+        get
+        {
+            if (_episodeRepository == null)
+            {
+                _episodeRepository = new EpisodeRepository(_applicationDbContext);
+            }
 
-			return _genreRepository;
-		}
-	}
-	
-	public StatusRepository StatusRepository
-	{
-		get
-		{
-			if (_statusRepository == null)
-			{
-				_statusRepository = new StatusRepository(_applicationDbContext);
-			}
+            return _episodeRepository;
+        }
+    }
 
-			return _statusRepository;
-		}
-	}
-	
-	public UnitOfWork(ApplicationDbContext applicationDbContext)
-	{
-		_applicationDbContext = applicationDbContext;
-	}
+    public GenreRepository GenreRepository
+    {
+        get
+        {
+            if (_genreRepository == null)
+            {
+                _genreRepository = new GenreRepository(_applicationDbContext);
+            }
 
-	public async Task Save()
-	{
-		await _applicationDbContext.SaveChangesAsync();
-	}
+            return _genreRepository;
+        }
+    }
 
-	#region DISPOSE STUFF
+    public StatusRepository StatusRepository
+    {
+        get
+        {
+            if (_statusRepository == null)
+            {
+                _statusRepository = new StatusRepository(_applicationDbContext);
+            }
 
-	private bool disposed = false;
+            return _statusRepository;
+        }
+    }
 
-	private async Task Dispose(bool disposing)
-	{
-		if (!disposed)
-		{
-			if (disposing)
-			{
-				await _applicationDbContext.DisposeAsync();
-			}
-		}
+    public UnitOfWork(ApplicationDbContext applicationDbContext)
+    {
+        _applicationDbContext = applicationDbContext;
+    }
 
-		disposed = true;
-	}
+    public async Task Save()
+    {
+        await _applicationDbContext.SaveChangesAsync();
+    }
 
-	public async void Dispose()
-	{
-		await Dispose(true);
-		GC.SuppressFinalize(this);
-	}
+    #region DISPOSE STUFF
 
-	#endregion
+    private bool disposed = false;
+
+    private async Task Dispose(bool disposing)
+    {
+        if (!disposed)
+        {
+            if (disposing)
+            {
+                await _applicationDbContext.DisposeAsync();
+            }
+        }
+
+        disposed = true;
+    }
+
+    public async void Dispose()
+    {
+        await Dispose(true);
+        GC.SuppressFinalize(this);
+    }
+
+    #endregion
 }

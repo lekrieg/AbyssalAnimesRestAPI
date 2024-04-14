@@ -7,7 +7,16 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="AutoMapper" Version="13.0.1" />
+    </ItemGroup>
+
+    <ItemGroup>
       <ProjectReference Include="..\AnimeAPI.Domain\AnimeAPI.Domain.csproj" />
+      <ProjectReference Include="..\AnimeAPI.Infra.Data\AnimeAPI.Infra.Data.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Mapping\Converters\" />
     </ItemGroup>
     
 </Project>

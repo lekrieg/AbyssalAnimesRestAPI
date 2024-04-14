@@ -7,6 +7,8 @@
 // 11, 24, 2023
 // ////////////////////////
 
+using AnimeAPI.Domain.ExtensionMethods;
+
 namespace AnimeAPI.Domain.Entities;
 
 public sealed class Episode : Entity
@@ -27,8 +29,16 @@ public sealed class Episode : Entity
 
 	public void UpdateInfo(string name, string fileType, byte[] episodeData)
 	{
-		Name = name;
-		FileType = fileType;
+		if(!name.IsNullOrEmptyOrWhiteSpace() && !Name.Equals(name))
+		{
+            Name = name;
+        }
+
+        if(!fileType.IsNullOrEmptyOrWhiteSpace() && !FileType.Equals(fileType))
+        {
+            FileType = fileType;
+        }
+
 		EpisodeData = episodeData;
 	}
 }
