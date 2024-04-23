@@ -8,26 +8,26 @@ using System.Threading.Tasks;
 
 namespace AnimeAPI.Application.UseCases;
 
-public class GetAllEpisodes : IUseCase<Task<List<EpisodeDTO>>, int>
+public class GetAllAnimes : IUseCase<Task<List<AnimeDTO>>>
 {
     private readonly IMapper _mapper;
     private readonly UnitOfWork _unitOfWork;
 
-    public GetAllEpisodes(IMapper mapper, UnitOfWork unitOfWork)
+    public GetAllAnimes(IMapper mapper, UnitOfWork unitOfWork)
     {
         _mapper = mapper;
         _unitOfWork = unitOfWork;
     }
 
-    public async Task<List<EpisodeDTO>> Execute(int id)
+    public async Task<List<AnimeDTO>> Execute()
     {
-        var episodes = await _unitOfWork.EpisodeRepository.GetAsync(a => a.AnimeId == id);
-        foreach (var e in episodes)
+        var animes = await _unitOfWork.AnimeRepository.GetAsync();
+        foreach (var a in animes)
         {
-            e.UpdateEpisodeData(CompressionHelper.Decompress(e.EpisodeData));
+            a.UpdateImage(CompressionHelper.Decompress(a.Image));
         }
 
-        var result = _mapper.Map<List<EpisodeDTO>>(episodes);
+        var result = _mapper.Map<List<AnimeDTO>>(animes);
 
         return result;
     }

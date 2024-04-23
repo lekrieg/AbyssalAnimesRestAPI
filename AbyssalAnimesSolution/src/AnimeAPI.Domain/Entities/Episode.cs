@@ -41,4 +41,9 @@ public sealed class Episode : Entity
 
 		EpisodeData = episodeData;
 	}
+
+	public void UpdateEpisodeData(byte[] episodeData)
+	{
+		EpisodeData = episodeData;
+    }
 }

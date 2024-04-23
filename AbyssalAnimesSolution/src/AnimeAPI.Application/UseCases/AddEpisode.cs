@@ -25,7 +25,7 @@ public class AddEpisode : IUseCase<Task, List<EpisodeDTO>>
         var episodes = _mapper.Map<List<Episode>>(request);
         foreach (var episode in episodes)
         {
-            episode.UpdateInfo(string.Empty, string.Empty, CompressionHelper.Compress(episode.EpisodeData));
+            episode.UpdateEpisodeData(CompressionHelper.Compress(episode.EpisodeData));
 
             await _unitOfWork.EpisodeRepository.Insert(episode);
         }

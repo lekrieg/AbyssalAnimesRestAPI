@@ -54,4 +54,9 @@ public sealed class Anime : Entity
 		TotalEpisodesAmount = totalEpisodesAmount;
 		Studio = studio;
 	}
+
+	public void UpdateImage(byte[] image)
+	{
+        Image = image;
+    }
 }

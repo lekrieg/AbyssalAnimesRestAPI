@@ -11,15 +11,17 @@ public class EpisodeDTO
      * 
      * se eu nao passar o id, preciso retornar a lista inteira
      */
+    public int Id { get; set; }
+
     [Required(ErrorMessage = "Anime id is required!")]
     public int AnimeId { get; set; }
 
     [Required(ErrorMessage = "Episode needs a name!")]
-    public string Name { get; private set; }
+    public string Name { get; set; }
 
     [Required(ErrorMessage = "Episode needs a file type!")]
-    public string FileType { get; private set; }
+    public string FileType { get; set; }
 
     [Required(ErrorMessage = "Theres no episode!")]
-    public byte[] EpisodeData { get; private set; }
+    public byte[] EpisodeData { get; set; }
 }

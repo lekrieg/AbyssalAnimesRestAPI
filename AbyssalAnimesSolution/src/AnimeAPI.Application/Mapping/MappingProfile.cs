@@ -9,5 +9,6 @@ public class MappingProfile : Profile
     public MappingProfile()
     {
         CreateMap<Episode, EpisodeDTO>().ReverseMap();
+        CreateMap<Anime, AnimeDTO>().ReverseMap();
     }
 }
