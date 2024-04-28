@@ -74,10 +74,10 @@ public class BaseRepository<T> : IBaseRepository<T> where T : Entity
 	public async Task DeleteAsync(int? id)
 	{
 		T e = await _dbSet.FindAsync(id);
-		await DeleteAsync(e);
+		await Delete(e);
 	}
 
-	public Task DeleteAsync(T item)
+	public Task Delete(T item)
 	{
 		_dbSet.Remove(item);
 		return Task.CompletedTask;
